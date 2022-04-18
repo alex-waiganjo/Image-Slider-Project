@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body{
+            margin:3rem 20rem;
+            background: rgb(208, 133, 227);
+        }
+        img{
+            padding:20px;
+            margin:10px;
+            height:450px;
+            width:500px;
+           
+        }
+        button{
+            background-color: aquamarine;
+            padding:15px;
+            font-size:medium;
+            border-radius: 4px;
+        }
+        h1{
+            font-family:sans-serif;
+
+        }
+         #head4{
+            color:chartreuse;
+            font-size: 60px;
+            font-weight: 20px;
+        }
+        #dev{
+            color:rgb(225, 229, 14);
+            font-size: 35px;
+            font-weight: 10px;
+        }
+         div #info{
+            background-color: cornflowerblue;
+        }
+        #info h5{
+            font-weight: 20px;
+            font-size: 45px;
+            color:rgb(233, 19, 19);
+        }
+        #info p{
+            font-size: 29px;
+            color: rgb(63, 43, 17);
+            font-weight: 20px;
+        }
+        </style>
+</head>
+<body>
+    <h1>Image Slider </h1>
+    <span id="head4">FullStack</span><span id="dev"> Web Development</span>
+    <div id="info">
+        <h5>Want to Dive into FullStack Web Development?</h5>
+        <p>Here are some of the languages and technologies you should know in order to build
+            secure,scalable,fast,reliable and efficient webistes .
+        </p>
+    </div>
+    <script>
+        var images = ["html.png","css.png","js.png","python.png","php.png","mysql.webp",
+        "postgres.png","api.png","git.png","react.png","django.jpeg","flask.png","fastapi.png"
+    ,"Laravel-9.jpg","test.jpg","docker.webp","web.jpg"];
+         var num = 0;
+         function Next(){
+          var image = document.getElementById("html");
+          num++;
+          if(num>=images.length){
+              num = 0;
+          }else
+          image.src= images[num];
+         }
+         function Prev(){
+             var image = document.getElementById("html");
+             num--;
+             if(num<0){
+                 num = images.length-1;                 
+             }else{
+                image.src = images[num];
+             }
+         }
+    </script>
+    <div>
+        <button onclick="Prev()">Previous</button>
+        <img  id="html"  src="html.png">
+        <button onclick="Next()">Next</button>
+    </div>
+
+</body>
+</html>
